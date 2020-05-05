@@ -1,5 +1,6 @@
 package com.beijing.day03;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -12,6 +13,28 @@ import java.util.concurrent.locks.ReentrantLock;
     3：防止虚假唤醒用while
     4：修改标志位
 
+    线程的6大状态：
+    1、new， 新建
+    2、runnable，运行
+    3、blocked，阻塞
+    4、waiting，等待
+    5、timed-waiting 定时等待
+    6、terminated 结束
+
+    认识一个新让线程睡觉的方法 TimeUnit.SECONDS.sleep(4);
+
+    线程出现的第一个异常 InterruptedException
+    https://blog.csdn.net/derekjiang/article/details/4845757
+    https://www.jianshu.com/p/a8abe097d4ed
+
+   监视器（锁）
+   如果synchronized 用在实力方法1上 监视器就是当前对象即this与此同时类里面的实例方法2还有一个synchronized的话第二个线程访问
+   访问实例方法2，是需要等待的，因为实例方法一还没哟释放锁资源，
+
+   如果synchronized用在静态方法一上 此时监视器是class模板类，，如果对同一个模板创建两个对象，虽然是两个对象但是监视器还是同一个
+   如果第一个抢占到锁资源的线程没有释放锁，，第二个线程还是需要等待
+   synchronized 修饰实例方法 监视器是当前对象this
+   synchronized 修饰的是静态方法 监视器是当前类class模板
 
  */
 class Plant {
@@ -102,5 +125,13 @@ public class ThreadPlan {
             }
         },"CC").start();
 
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+
+
+
 }

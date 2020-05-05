@@ -1,2 +1,10 @@
 1，snychronized 与 Lock的区别
-2，
+
+线程的状态，，什么情况下会出现这6种状态
+2，   线程的6大状态：
+      1、new， 新建
+      2、runnable，运行
+      3、blocked，阻塞
+      4、waiting，等待
+      5、timed-waiting 定时等待
+      6、terminated 结束
