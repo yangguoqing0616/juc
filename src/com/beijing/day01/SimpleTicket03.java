@@ -8,7 +8,7 @@ java8 表达式实现
     1，拷贝右括号 写死右箭头   落地大括号
     2, @FunctionalInterface 有该注解的接口一定是函数式接口
     3， 接口可以有方法的实现，用default 关键字 但是只能有一个
-    4, 静态方法
+    4, 静态方法 静态方法可以有多个
 
  */
 @FunctionalInterface
@@ -23,6 +23,10 @@ interface Foo{
     static int add3(int x,int y){
         return x+y;
     }
+    static int add4(int x,int y){
+        return x+y;
+    }
+
 
 }
 
