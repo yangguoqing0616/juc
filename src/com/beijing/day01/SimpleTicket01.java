@@ -1,7 +1,7 @@
 package com.beijing.day01;
 
 /*
-题目 30个售票员  卖 30张票
+题目 3个售票员  卖 30张票
 
  多线程编程的套路
 
@@ -14,18 +14,17 @@ package com.beijing.day01;
  */
 
 class ticket {
-    private  int number = 30;
+    private int number = 30;
 
-    public synchronized void saleTicket(){
-        if(number>0){
-            System.out.println(Thread.currentThread().getName()+"卖出第"+number-- +"张票，还剩"+number);
+    public synchronized void saleTicket() {
+        if (number > 0) {
+            System.out.println(Thread.currentThread().getName() + "卖出第" + number-- + "张票，还剩" + number);
         }
     }
 
 }
 
 public class SimpleTicket01 {
-
 
 
     public static void main(String[] args) {
