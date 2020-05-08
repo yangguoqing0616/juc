@@ -9,6 +9,9 @@ import java.util.concurrent.FutureTask;
     创建线程的4大方法
     1.extends Thread 类  重写里面的run方法
     2.implements Runnable 接口
+    3.implemrnts callable 接口 这个接口比较特殊，，一个对象启动一次，，如果是两个对象启动同一个，只能启动一次
+
+
 
  */
 class MyThread01 extends Thread{
