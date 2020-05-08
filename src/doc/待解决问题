@@ -9,9 +9,8 @@
       5、timed-waiting 定时等待
       6、terminated 结束
 
- 3,java8 下的集合继承关系？
+ 3, java8 下的集合继承关系？
 
  4，list set map 的底层原理
 
  5，list,扩容，，Hash 扩容
-
