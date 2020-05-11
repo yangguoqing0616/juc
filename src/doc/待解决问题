@@ -1,5 +1,7 @@
 1，snychronized 与 Lock的区别
 
+https://blog.csdn.net/u012403290/article/details/64910926
+
 线程的状态，，什么情况下会出现这6种状态
 2，   线程的6大状态：
       1、new， 新建
