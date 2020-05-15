@@ -1,8 +1,11 @@
 package com.beijing.day07;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 
-class MyTask extends RecursiveTask {
+class MyTask extends RecursiveTask<Integer> {
     private static final Integer ADJUST_VALUE = 10;
     private int begin;
     private int end;
@@ -27,18 +30,20 @@ class MyTask extends RecursiveTask {
             MyTask task02 = new MyTask(middle + 1, end);
             task01.fork();
             task02.fork();
-            Object join = task01.join();
+            result = task02.join() + task01.join();
 
         }
         return result;
-
-
     }
 }
 
 public class ForkJoinDemo {
-    public static void main(String[] args){
-
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        MyTask myTask = new MyTask(0, 100);
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        ForkJoinTask<Integer> forkJoinTask = forkJoinPool.submit(myTask);
+        System.out.println(forkJoinTask.get());
+        forkJoinPool.shutdown();
     }
 }
 
