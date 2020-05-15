@@ -2,6 +2,7 @@ package com.beijing.day07;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 public class CompletableFutureDemo {
 
@@ -17,7 +18,7 @@ public class CompletableFutureDemo {
             System.out.println(Thread.currentThread().getName() + "\t completableFuture2");
             int i = 10 / 0;
             try {
-                Thread.sleep(2000);
+                TimeUnit.SECONDS.sleep(4);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
